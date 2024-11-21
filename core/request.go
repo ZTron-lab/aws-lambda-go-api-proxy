@@ -173,7 +173,7 @@ func (r *RequestAccessor) EventToRequest(req events.APIGatewayProxyRequest) (*ht
 			if queryString != "" {
 				queryString += "&"
 			}
-			queryString += url.QueryEscape(q) + "=" + url.QueryEscape(req.QueryStringParameters[q])
+			queryString += q + "=" + req.QueryStringParameters[q]
 		}
 		path += "?" + queryString
 	}
